@@ -1,0 +1,18 @@
+*{
+    padding: 0;
+    font-family: poppins;
+}
+
+
+input {
+    border: 1px solid #dedede;
+    border-radius: 5px;
+    padding: 6px;
+}
+
+.box {
+    border: 1px solid #c4c4c4;
+    padding: 20px 0px 20px 10px;
+    max-width: 44%;
+    margin-top: 10px;
+}
