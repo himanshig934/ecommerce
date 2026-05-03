@@ -28,7 +28,6 @@ export default function Header() {
               <ul className='flex items-center gap-8 text-[15px] font-medium'>
 
                 <Link to='/'><li>Home</li></Link>
-                <Link to='/about-us'><li>About Us</li></Link>
                 <Link to='/'><li>Our Products</li></Link>
                 <Link to='/contact-us'><li>Contact Us</li></Link>
                 <Link to='/blogs'><li>Blogs</li></Link>
