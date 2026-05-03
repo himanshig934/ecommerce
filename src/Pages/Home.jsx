@@ -85,6 +85,7 @@ export default function Home() {
             <div className="category px-6 bg-[#eeeeee] py-6 cursor-pointer">
             
                <Category finalcategory={finalcategory} setSelectedCategory={setSelectedCategory}/>
+               
             </div>
            </div>
 

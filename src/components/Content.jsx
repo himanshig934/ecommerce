@@ -59,9 +59,6 @@ useEffect(() => {
 const [name, setName] = useState('');
 
 
-
-
-
   return (
     <>
 
@@ -93,3 +90,7 @@ const [name, setName] = useState('');
     </>
   )
 }
+
+
+
+

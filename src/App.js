@@ -12,6 +12,7 @@ import Login from './components/Login';
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Content from './components/Content';
 import { useState } from 'react';
+import LoginProvider from './components/LoginContext';
 
 
 
@@ -21,6 +22,8 @@ const [islogin, setIsLogin] = useState(true);
 
   return (
     <>
+
+       <LoginProvider>
       <Router>
         
         <Header/>
@@ -37,6 +40,8 @@ const [islogin, setIsLogin] = useState(true);
         </Routes>
 
       </Router>
+          </LoginProvider>
+
     </>
   )
 }

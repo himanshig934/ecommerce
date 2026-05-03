@@ -1,10 +1,13 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import logo from '../images/logo.png';
 import { Link } from 'react-router-dom';
+import { LoginContext } from './LoginContext';
 
 export default function Header() {
 
-  
+    const { isLogin, setIsLogin } = useContext(LoginContext);
+
+
   return (
     <>
       <header>
@@ -24,6 +27,15 @@ export default function Header() {
                   <Link to='/content'><li>Content</li></Link>
                 </ul>
               </div>
+
+              <div>
+                {isLogin ?  <button class="w-full bg-red-800 text-white py-2 rounded-md hover:bg-blue-700 transition px-4">
+              LOGOUT</button>
+                 :  <button class="w-full bg-green-800 text-white py-2 rounded-md hover:bg-blue-700 transition px-4">
+              LOGIN
+            </button>}
+              </div>
+
             </div>
 
           </div>
