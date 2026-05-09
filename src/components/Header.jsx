@@ -3,11 +3,13 @@ import logo from '../images/logo.png';
 import { Link } from 'react-router-dom';
 import { LoginContext } from './LoginContext';
 import { UserContext } from '../context/UserContext';
+import { counterContext } from '../context/CounterContext';
 
 export default function Header() {
 
   const { isLogin } = useContext(LoginContext);
   const { user } = useContext(UserContext);
+  const {count} = useContext(counterContext);
 
   return (
     <>
@@ -73,6 +75,13 @@ export default function Header() {
           </div>
 
         </div>
+
+
+      <div className='topbar bg-dark py-2 text-white '>
+      <div className='px-4'>
+      counter : {count}
+      </div>
+      </div>
 
       </header>
     </>

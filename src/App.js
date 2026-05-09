@@ -12,6 +12,7 @@ import Content from './components/Content';
 import { useState } from 'react';
 import LoginProvider from './components/LoginContext';
 import UserProvider from './context/UserContext';
+import CounterProvider from './context/CounterContext';
 
 
 function App() {
@@ -21,6 +22,7 @@ function App() {
 
       <LoginProvider>
         <UserProvider>
+          <CounterProvider>
           <Router>
 
             <Header />
@@ -36,6 +38,7 @@ function App() {
             </Routes>
 
           </Router>
+          </CounterProvider>
         </UserProvider>
       </LoginProvider>
 

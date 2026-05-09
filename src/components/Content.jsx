@@ -1,26 +1,29 @@
-import React, { useEffect, useState } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import Box from './Box';
 import axios from 'axios';
 import Input from './Input';
 import Timer from './Timer';
+import { counterContext } from '../context/CounterContext';
 
 export default function Content() {
 
-const[count, setCount] = useState(0); 
+// const[count, setCount] = useState(0); 
 
-function btnhandle(){
-    setCount(count+1);
-}
+const {count, setCount } = useContext(counterContext);
 
-function decbtn(){
+// function btnhandle(){
+//     setCount(count+1);
+// }
 
-    if(count != 0){
-        setCount(count - 1);
-    }else{
-        console.log('error');
-    }
+// function decbtn(){
 
-}
+//     if(count != 0){
+//         setCount(count - 1);
+//     }else{
+//         console.log('error');
+//     }
+
+// }
 
 // user api
 const [user, setUsers] = useState([]);
@@ -44,29 +47,29 @@ useEffect(() => {
 
    newapi();
 
-
-// axios.get('https://dummyjson.com/users')
-// .then((res) => res.data)
-// .then((data) => {
-//     setUsers(data.users);
-// });
-
 }, []);
 
 
-// input field
-
 const [name, setName] = useState('');
+
+
+function clickcountbtn(){
+  setCount(count+1);
+}
+
+function resetbutton(){
+  setCount(0);
+}
 
 
   return (
     <>
 
-    <div className='max-w-7xl justify-center m-auto mt-10 py-2'>
+    {/* <div className='max-w-7xl justify-center m-auto mt-10 py-2'>
         <p>count : {count}</p>
         <button className='bg-red-700 text-white px-8 py-2 rounded-[4px]' onClick={btnhandle}>Increase button</button>
         <button className='bg-green-700 text-white px-8 py-2 rounded-[4px]' onClick={decbtn}>Decrease button</button>
-    </div>
+    </div> */}
 
 
     {/* card component */}
@@ -87,6 +90,15 @@ const [name, setName] = useState('');
 
     {/* Timer component  */}
     <Timer/>
+
+    {/* counter buttom */}
+
+    
+   <div className='flex justify-center'>
+    <button className='bg-pink-800 px-4 py-2 text-white mr-4' onClick={clickcountbtn} >Counter button</button>
+    <button className='bg-red-600 px-4 py-2 text-white' onClick={resetbutton} >Reset</button>
+   </div>
+
     </>
   )
 }
