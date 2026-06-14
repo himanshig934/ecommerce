@@ -7,7 +7,6 @@ export default function CounterProvider({children}) {
 
     const [count, setCount] = useState(0);
 
-
   return (
     <div>
       <counterContext.Provider value={{count, setCount}}>
@@ -16,3 +15,4 @@ export default function CounterProvider({children}) {
     </div>
   )
 }
+
