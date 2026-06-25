@@ -4,6 +4,7 @@ import axios from 'axios';
 import Input from './Input';
 import Timer from './Timer';
 import { counterContext } from '../context/CounterContext';
+import { Link } from 'react-router-dom';
 
 export default function Content() {
 
@@ -91,18 +92,24 @@ function resetbutton(){
     {/* Timer component  */}
     <Timer/>
 
+
+
     {/* counter buttom */}
 
-    
    <div className='flex justify-center'>
     <button className='bg-pink-800 px-4 py-2 text-white mr-4' onClick={clickcountbtn} >Counter button</button>
     <button className='bg-red-600 px-4 py-2 text-white' onClick={resetbutton} >Reset</button>
    </div>
 
+         <div className='flex justify-center item-center gap-6 mt-[20px]'>
+           <Link to='/mens'><li>Mens</li></Link>
+            <Link to='/kids'><li>Kids</li></Link>
+         </div>
+
     </>
+
   )
 }
-
 
 
 

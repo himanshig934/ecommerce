@@ -6,13 +6,16 @@ import Questions from './Hooks/Questions';
 import Blogs from './components/Blogs';
 import Single from './components/Single';
 import Login from './components/Login';
-
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Content from './components/Content';
 import { useState } from 'react';
 import LoginProvider from './components/LoginContext';
 import UserProvider from './context/UserContext';
 import CounterProvider from './context/CounterContext';
+import Men from './components/Men.Jsx';
+import Kids from './components/Kids';
+
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import NotFound from './components/NotFound';
 
 
 function App() {
@@ -27,6 +30,8 @@ function App() {
 
             <Header />
 
+
+
             <Routes>
               <Route path='/' element={<Home />} />
               <Route path="/contact-us" element={<Contact />} />
@@ -34,8 +39,14 @@ function App() {
               <Route path='/blogs' element={<Blogs />} />
               <Route path='/post/:id' element={<Single />} />
               <Route path='/login' element={<Login />} />
-              <Route path='/content' element={<Content />} />
+              <Route path='/content' element={<Content />} />  
+              <Route path='/men' element={<Men/>} />
+              <Route path='*'  element={<NotFound/>} />   
+
             </Routes>
+
+
+
 
           </Router>
           </CounterProvider>
