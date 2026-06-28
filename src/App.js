@@ -16,6 +16,7 @@ import Kids from './components/Kids';
 
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import NotFound from './components/NotFound';
+import Button from './components/Button';
 
 
 function App() {
@@ -26,29 +27,27 @@ function App() {
       <LoginProvider>
         <UserProvider>
           <CounterProvider>
-          <Router>
+            <Router>
 
-            <Header />
+              <Header />
 
+              <Routes>
+                <Route path='/' element={<Home />} />
+                <Route path="/contact-us" element={<Contact />} />
+                <Route path='/questions' element={<Questions />} />
+                <Route path='/blogs' element={<Blogs />} />
+                <Route path='/post/:id' element={<Single />} />
+                <Route path='/login' element={<Login />} />
 
+                <Route path="/content" element={<Content />}>
+                  <Route path="men" element={<Men />} />
+                  <Route path="kids" element={<Kids />} />
+                </Route>
+                <Route path='*' element={<NotFound />} />
+                <Route path='/button' element={<Button/>}/>
+              </Routes>
 
-            <Routes>
-              <Route path='/' element={<Home />} />
-              <Route path="/contact-us" element={<Contact />} />
-              <Route path='/questions' element={<Questions />} />
-              <Route path='/blogs' element={<Blogs />} />
-              <Route path='/post/:id' element={<Single />} />
-              <Route path='/login' element={<Login />} />
-              <Route path='/content' element={<Content />} />  
-              <Route path='/men' element={<Men/>} />
-              <Route path='*'  element={<NotFound/>} />   
-
-            </Routes>
-
-
-
-
-          </Router>
+            </Router>
           </CounterProvider>
         </UserProvider>
       </LoginProvider>
